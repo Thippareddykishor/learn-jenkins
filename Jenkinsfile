@@ -1,0 +1,13 @@
+pipeline {
+    agent {label 'linux'}
+
+parameters{
+    string(name: 'Person', defaultValue: 'test', description: 'who am i')
+    text(name: 'BIOGRAPHY', defaultValue: '', description: 'who am i')
+    booleanParam(name: 'TOGGLE', defaultValue: 'true', description: 'who am i')
+    choice(name: 'CHOICE', choices:['one','two','three'])
+    password(name: 'PASSWORD', defaultValue: 'SECRET',description:'enter password')
+
+}
+
+}
