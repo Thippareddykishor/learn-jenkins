@@ -1,0 +1,7 @@
+- name: Hello
+  debug:
+    msg: Hello
+
+- name: Create a jenkins job using basic authencation
+  community.general.jenkins_jobs:
+    config: "{{  u}}"
