@@ -17,4 +17,9 @@ stages{
         }
     }
 }
+post {
+    always {
+        cleanWs()
+    }
+}
 }
