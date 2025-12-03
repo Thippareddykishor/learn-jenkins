@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'linux'}
+    agent {label ''}
 
 parameters{
     string(name: 'Person', defaultValue: 'test', description: 'who am i')
