@@ -10,4 +10,11 @@ parameters{
 
 }
 
+stages{
+    stage('checkout'){
+        steps{
+            sh 'echo hellp'
+        }
+    }
+}
 }
