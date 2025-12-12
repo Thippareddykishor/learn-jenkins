@@ -16,6 +16,18 @@ stages{
             sh 'echo hellp'
         }
     }
+    stage('Example'){
+        input{
+            message "should we continue"
+            OK "yes we should"
+            parameters{
+                string(name: 'PERSON')
+            }
+        }
+        steps{
+            echo "Hello ${PERSON}"
+        }
+    }
 }
 post {
     always {
