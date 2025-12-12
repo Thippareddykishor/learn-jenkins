@@ -1,0 +1,15 @@
+- name: jenkins repo
+  ansible.builtin.template:
+    src: jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: install jenkins
+  ansible.builtin.dnf:
+    name: jenkins
+    state: present
+
+- name: start jenkins
+  ansible.builtin.systemd_service:
+    name: jenkins 
+    state: started
+    
