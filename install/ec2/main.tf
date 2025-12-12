@@ -1,10 +1,13 @@
 resource "aws_instance" "tool" {
   instance_type = var.instance_type
-  vpc_security_group_ids = []
+  vpc_security_group_ids = [aws_security_group.tool.id]
   ami = var.ami_id
 
   tags = {
     Name = var.name
+  }
+  instance_market_options {
+    market_type = "spot"
   }
 }
 
@@ -16,7 +19,7 @@ data "aws_route53_zone" "get_zoneId" {
 }
 
 resource "aws_route53_record" "record" {
-  zone_id = data.aws_route53_zone.get_zoneId.name
+  zone_id = data.aws_route53_zone.get_zoneId.id
   type="A"
   ttl = 10
   records= [aws_instance.tool.public_ip]
@@ -25,7 +28,7 @@ resource "aws_route53_record" "record" {
 
 resource "aws_security_group" "tool" {
   name = "${var.name}-sg"
-  vpc_id = ""
+  vpc_id = "vpc-0a3866008be6589a6"
 
   tags = {
     Name= "allow_all"

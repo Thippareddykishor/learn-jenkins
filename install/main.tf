@@ -17,6 +17,10 @@ variable "tools" {
         port =8080
         
     }
+    jenkins_agent={
+        instance_type="t3.small"
+        port=8080
+    }
   }
 }
 
