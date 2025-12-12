@@ -4,3 +4,13 @@
       - java-17-openjdk
       - fontconfig
     state: present
+
+- name: Add jenkins user
+  ansible.builtin.user:
+    name: jenkins
+
+- name: create jenkins folder
+  ansible.builtin.file:
+    path: /jenkins
+    owner: jenkins
+    group: jenkins
