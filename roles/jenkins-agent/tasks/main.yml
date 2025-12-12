@@ -14,3 +14,4 @@
     path: /jenkins
     owner: jenkins
     group: jenkins
+    state: directory
