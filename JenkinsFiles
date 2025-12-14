@@ -19,7 +19,7 @@ stages{
     stage('deploy'){
         steps {
             when {
-                environment: 'DEPLOY' , value: 'qa'
+                environment name: 'DEPLOY' , value: 'qa'
             }
         }
     }
