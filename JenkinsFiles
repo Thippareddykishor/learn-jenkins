@@ -7,8 +7,8 @@ stages{
     stage('checkout'){
         steps {
             sh '''
-            echo '${params.Person}'
-            
+            echo '${Person}'
+
             '''
         }
     }
