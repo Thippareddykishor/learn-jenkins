@@ -3,15 +3,17 @@ pipeline {
     environment {
         PROJECT= 'expense'
         COMPONENT= 'backend'
-            def apiVerson=''
+        def apiVerson=''
 
     }
     stages{
         stage('Read version'){
-            steps{
+            steps{script {
                 def packageJson = readJSON file: 'package.json'
                 apiVerson= packageJson.version
                 echo '${apiVersion}'
+            }
+
             }
         }
     }
