@@ -1,9 +1,10 @@
 pipeline {
     agent any
-    def apiVerson=''
-    enviroment {
+    environment {
         PROJECT= 'expense'
         COMPONENT= 'backend'
+            def apiVerson=''
+
     }
     stages{
         stage('Read version'){
