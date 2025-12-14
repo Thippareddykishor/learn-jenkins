@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    def apiVerson=''
+    enviroment {
+        PROJECT= 'expense'
+        COMPONENT= 'backend'
+    }
+    stages{
+        stage('Read version'){
+            steps{
+                def packageJson = readJSON file: 'package.json'
+                apiVerson= packageJson.version
+                echo '${apiVersion}'
+            }
+        }
+    }
+}
