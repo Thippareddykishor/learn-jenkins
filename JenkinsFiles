@@ -21,7 +21,7 @@ stages{
             }
         steps {
             sh '''
-            echo 'deploy to
+            echo 'deploy to'
             '''
         }
     }
