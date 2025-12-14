@@ -17,10 +17,13 @@ stages{
         }
     }
     stage('deploy'){
-        steps {
-            when {
+        when {
                 environment name: 'DEPLOY' , value: 'qa'
             }
+        steps {
+            sh '''
+            echo 'deploy to '
+            '''
         }
     }
 }
