@@ -1,0 +1,15 @@
+pipeline  {
+agent any
+parameters{
+    string(name: 'Person',defaultValue:'Mr. Reddy' )
+}
+stages{
+    stage('checkout'){
+        steps {
+            sh '''
+            echo '${params.Person}'
+            '''
+        }
+    }
+}
+}
