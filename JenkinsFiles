@@ -11,8 +11,7 @@ stages{
     stage('checkout'){
         steps {
             sh '''
-            echo "test: ${params.Person}"
-
+     echo "Person: ${params.Person}"
             '''
         }
     }
