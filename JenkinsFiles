@@ -5,7 +5,7 @@ environment {
 }
 parameters{
     string(name: 'Person',defaultValue:'Mr. Reddy' )
-    string(env: 'env',    defaultValue: 'dev')
+    string(name: 'env',    defaultValue: 'dev')
 }
 stages{
     stage('checkout'){
