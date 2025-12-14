@@ -2,15 +2,28 @@ pipeline  {
 agent any
 parameters{
     string(name: 'Person',defaultValue:'Mr. Reddy' )
+    string(env: 'env',defaultValue: 'dev')
 }
 stages{
     stage('checkout'){
         steps {
             sh '''
-            echo '${Person}'
+            echo "test: ${params.Person}"
 
             '''
         }
+    }
+    stage('deploy'){
+        steps {
+            when {
+                env: 'env' , value: 'dev'
+            }
+        }
+    }
+}
+post {
+    always{
+        cleanWs()
     }
 }
 }
