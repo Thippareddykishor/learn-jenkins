@@ -17,7 +17,7 @@ stages{
     }
     stage('deploy'){
         when {
-                environment name: 'DEPLOY' , value: 'dev'
+                environment name: 'DEPLOY' , value: 'DEV'
             }
         steps {
             sh '''
