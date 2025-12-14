@@ -1,8 +1,11 @@
 pipeline  {
 agent any
+environment {
+    DEPLOY ='DEV'
+}
 parameters{
     string(name: 'Person',defaultValue:'Mr. Reddy' )
-    string(env: 'env',defaultValue: 'dev')
+    string(env: 'env',    defaultValue: 'dev')
 }
 stages{
     stage('checkout'){
@@ -16,7 +19,7 @@ stages{
     stage('deploy'){
         steps {
             when {
-                env: 'env' , value: 'dev'
+                environment: 'DEPLOY' , value: 'qa'
             }
         }
     }
