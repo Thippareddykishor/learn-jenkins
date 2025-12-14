@@ -11,13 +11,13 @@ stages{
     stage('checkout'){
         steps {
             sh '''
-     echo "Person: ${params.Person}"
+     echo "Person: ${Person}"
             '''
         }
     }
     stage('deploy'){
         when {
-                environment name: 'DEPLOY' , value: 'qa'
+                environment name: 'DEPLOY' , value: 'dev'
             }
         steps {
             sh '''
