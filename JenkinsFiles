@@ -8,6 +8,7 @@ stages{
         steps {
             sh '''
             echo '${params.Person}'
+            
             '''
         }
     }
